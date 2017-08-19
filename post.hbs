@@ -69,28 +69,14 @@ into the {body} of the default.hbs template --}}
                 {{/author}}
             </footer>
 
-            {{!--
-
-            If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
-
+            
             <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = '{{url absolute="true"}}';
-                        this.page.identifier = 'ghost-{{id}}';
-                    };
-                    (function() {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
+                <!-- UY BEGIN -->
+                <div id="uyan_frame"></div>
+                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2141959"></script>
+                <!-- UY END -->
             </section>
-            --}}
+            
 
         </article>
 
@@ -102,7 +88,7 @@ into the {body} of the default.hbs template --}}
     <div class="inner">
         <div class="read-next-feed">
 
-            {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{id}}" limit="3"}}
+            {{#get "posts" filter="tags:{{tags.[0].slug}}+id:-{{comment_id}}" limit="3"}}
                 <article class="read-next-card"
                     {{#if ../tags.[0].feature_image}}
                         style="background-image: url({{../tags.[0].feature_image}})"
