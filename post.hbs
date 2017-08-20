@@ -27,15 +27,14 @@ into the {body} of the default.hbs template --}}
                 <h1 class="post-full-title">{{title}}</h1>
             </header>
 
-            {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
-            </figure>
+            
+
+            
+               {{#if feature_image}}
+               <image style="width:100%;max-width:100%;margin:0 auto" src='{{feature_image}}' />
+            
             {{/if}}
-
-            <section class="post-full-content">
-                {{content}}
-            </section>
-
+            
             {{!-- Email subscribe form at the bottom of the page --}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
