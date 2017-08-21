@@ -24,25 +24,21 @@ into the {body} of the default.hbs template --}}
                         <span class="date-divider">/</span> <a href="{{@blog.url}}/tag/{{tags.[0].slug}}">{{tags.[0].name}}</a>
                     {{/if}}
                 </section>
-                <h1 class="post-full-title">{{title}}</h1>
+                <h1 class="post-full-title">{{title}}
+                {{#if meta_description}}
+                    @<a target="_blank" href="https://www.google.com/maps/place/{{meta_description}}">{{meta_description}}</a>
+                {{/if}}
+                </h1>
             </header>
 
             
 
             
                {{#if feature_image}}
-               <image style="width:100%;max-width:100%;margin:0 auto" src='https://qiniu.wangshengtao.com/itina/instagram/{{feature_image}}.jpg!ins640' />
+                <image style="width:100%;max-width:100%;margin:0 auto" src='https://qiniu.wangshengtao.com/itina/instagram/{{feature_image}}.jpg!ins640' />
+               {{/if}}
             
-            {{/if}}
             
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if @labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
-            {{/if}}
 
             <footer class="post-full-footer">
                 {{!-- Everything inside the #author tags pulls data from the author --}}
@@ -57,12 +53,12 @@ into the {body} of the default.hbs template --}}
                         {{#if bio}}
                             <p>{{bio}}</p>
                         {{else}}
-                            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                            <p>visit <a href="https://www.instagram.com/tinasun0815/">tinasun's instagram</a></p>
                         {{/if}}
                     </section>
                 </section>
                 <div class="post-full-footer-right">
-                    <a class="author-card-button" href="{{url}}">Read More</a>
+                    <a class="author-card-button" href="{{meta_title}}">Go Instagram</a>
                 </div>
 
                 {{/author}}
@@ -70,10 +66,24 @@ into the {body} of the default.hbs template --}}
 
             
             <section class="post-full-comments">
-                <!-- UY BEGIN -->
-                <div id="uyan_frame"></div>
-                <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2141959"></script>
-                <!-- UY END -->
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDMyOS82ODgy">
+                    <script type="text/javascript">
+                   (function(d, s) {
+                       var j, e = d.getElementsByTagName(s)[0];
+
+                       if (typeof LivereTower === 'function') { return; }
+
+                       j = d.createElement(s);
+                       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                       j.async = true;
+
+                       e.parentNode.insertBefore(j, e);
+                   })(document, 'script');
+                    </script>
+                <noscript>如果评论未出现，请检查cdn-city.livere.com域名是否被屏蔽</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             </section>
             
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='zh-cn'>
 <head>
 
     {{!-- Document Settings --}}
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Base Meta --}}
-    <title>{{meta_title}}</title>
+    <title>{{post.title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -57,9 +57,7 @@
 
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
+        src="{{asset "js/jquery-3.2.1.min.js"}}">
     </script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
 
